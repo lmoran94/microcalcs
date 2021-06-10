@@ -28,7 +28,7 @@ f = open("input/og_sphere_calc.csv", "w")
 test = []
 test_x = np.linspace(0, 1, 10)
 #print(PI)
-for i in range(10):
+for i in range(11):
     theta = np.random.uniform(0, 2*PI)
     v = np.random.uniform(0,1)
     phi = math.acos((2*v)-1)

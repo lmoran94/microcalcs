@@ -1,6 +1,6 @@
 import numpy as np
 
-f = open('/Users/lm579/Projects/Microcalcs/output/spectrometer.dat','r')
+f = open('/Users/lm579/Projects/Microcalcs/output/spectrometer_{spectrometer}.csv','r')
 
 wavelength = []
 count = []

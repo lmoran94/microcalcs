@@ -8,5 +8,6 @@ f = open("input/weightings.csv", "r")
 weightings = open("output/weightings.txt", "a")
 
 reader = csv.reader(f)
+next(reader)
 for i in reader:
     weightings.write("{}\n".format(float(i[0])))

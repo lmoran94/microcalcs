@@ -10,9 +10,7 @@ with open("input/og_sphere_calc.csv","r") as points_file:
     csv_reader = csv.reader(points_file, delimiter=',')
     for row in csv_reader:
         row = [float(i) for i in row]
-        #print("row before: ", row)
         row[2] += float(sys.argv[1])
-        #print("row after: ", row)
         new_rows.append(row)
 
 print("POINTS: ", new_rows)
