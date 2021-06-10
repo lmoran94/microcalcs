@@ -1,5 +1,13 @@
 {
-    op : {
-        Sample: ["sphere_calc.csv", "scale.nc", {There: "10m_64_lm.json5"}]
-    }
+    ops : [
+        [
+            "output", {
+                Sample: [
+                    "sphere_calc.csv",
+                    "scale_breastvol.nc",
+                    {   There: "breast_grid.json5" }
+                ]
+            }
+        ]
+    ]
 }
