@@ -1,5 +1,6 @@
 import netCDF4 as nc
 import re
+import sys
 import os, os.path
 import numpy as np
 import numpy.ma as ma
@@ -8,7 +9,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from pylab import meshgrid, cm, imshow, contour, clabel, colorbar, axis, title, show
 
-print len([name for name in os.listdir('.') if os.path.isfile("User/lm579/Projects/Microcalcs/output/ccd_sors_map/"+name)])
 
 #function to read in files and then sort numerically by filename
 numbers = re.compile(r'(\d+)')
@@ -17,7 +17,7 @@ def numericalSort(value):
     parts[1::2] = map(int, parts[1::2])
     return parts
 
-directory = "/Users/lm579/Projects/Microcalcs/output/ccd_trs_map/"
+directory = "/home/laura/Projects/microcalcs/output/ccd_trs_map_1cmsphere/"
 filenames = []
 count=0
 
@@ -40,7 +40,7 @@ for file in sorted(os.listdir(directory), key=numericalSort):
 
         #8cmx8cm, 128x128pixels
         #1cm diameter detector, in pixels
-        detector_rad = 5.0
+        detector_rad = float(sys.argv[1])
         ccd_width = 80.0
         ccd_pixel = 128.0
         pixel_rad = detector_rad/(ccd_width/ccd_pixel)
@@ -61,7 +61,7 @@ for file in sorted(os.listdir(directory), key=numericalSort):
 #Find wavelength that contains data
 
             #print("valid value: ", new_vals[i][j])
-        new_f = open('/Users/lm579/Projects/Microcalcs/output/Raman_weight_post_trs.txt', 'a')
+        new_f = open('/home/laura/Projects/microcalcs/output/Raman_weight_circle_%s.txt' %int(detector_rad), 'a')
         new_f.write("{}\n".format(total_count))
         #print("Total count within 50mm radius of centre (TRS): ", total_count)
 print("count: ", count)
