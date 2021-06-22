@@ -9,7 +9,7 @@ xrange = (-0.02, 0.02)
 yrange = (-0.0005, 0.0005)
 zrange = (-0.0005, 0.0005)
 
-f = open("input/og_cuboid_calc.csv", "w")
+f = open("input/og_calc.csv", "w")
 
 points = []
 

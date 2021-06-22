@@ -88,7 +88,7 @@
         Here: {
             power: 5.594921126236869e-08,
             emit: {
-                Points: "sphere_calc.csv"
+                Points: "calc.csv"
             },
             spec: {
                 Here: {

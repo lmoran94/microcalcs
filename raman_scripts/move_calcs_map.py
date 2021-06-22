@@ -6,7 +6,7 @@ from collections import OrderedDict
 
 
 new_rows = []
-with open("input/og_sphere_calc.csv","r") as points_file:
+with open("input/og_calc.csv","r") as points_file:
     csv_reader = csv.reader(points_file, delimiter=',')
     for row in csv_reader:
         row = [float(i) for i in row]
@@ -26,6 +26,6 @@ print("POINTS: ", new_rows)
 
 
 
-with open("input/sphere_calc.csv", "w") as points_file:
+with open("input/calc.csv", "w") as points_file:
     csv_writer = csv.writer(points_file, delimiter=',')
     csv_writer.writerows(new_rows)

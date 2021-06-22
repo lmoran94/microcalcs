@@ -18,7 +18,7 @@ def sample(center,radius,n_per_sphere):
     p = center + np.multiply(x,frtiled)
     return p
 
-f = open("input/og_sphere_calc.csv", "w")
+f = open("input/og_calc.csv", "w")
 #fig1 = plt.figure(1)
 #ax1 = fig1.gca()
 #center = np.array([0,0,0])
