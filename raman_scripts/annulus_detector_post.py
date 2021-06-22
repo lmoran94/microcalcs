@@ -1,5 +1,6 @@
 import netCDF4 as nc
 import re
+import sys
 import os, os.path
 import numpy as np
 import numpy.ma as ma
@@ -16,7 +17,7 @@ def numericalSort(value):
     parts[1::2] = map(int, parts[1::2])
     return parts
 
-directory = "/Users/lm579/Projects/Microcalcs/output/ccd_sors_map/"
+directory = "/home/laura/Projects/microcalcs/output/ccd_sors_map_1cmsphere/"
 filenames = []
 count=0
 
@@ -39,7 +40,7 @@ for file in sorted(os.listdir(directory), key=numericalSort):
 
         #8cmx8cm, 128x128pixels
         #1mm thick annulus detector, in pixels
-        detector_rad_outer = 10.0
+        detector_rad_outer = float(sys.argv[1])
         detector_rad_inner = detector_rad_outer - 1.0
         ccd_width = 80.0
         ccd_pixel = 128.0
@@ -53,6 +54,6 @@ for file in sorted(os.listdir(directory), key=numericalSort):
                     if ((float(i)-centre)**2 + (float(j)-centre)**2 >= (pixel_rad_inner)**2):
                         total_count += new_vals[i][j]
                         #print("valid value: ", new_vals[i][j])
-        g = open('/Users/lm579/Projects/Microcalcs/output/Raman_weight_annulus_10mm.txt', 'a')
+        g = open('/home/laura/Projects/microcalcs/output/Raman_weight_annulus_%s.txt' %int(detector_rad_outer), 'a')
         g.write("{}\n".format(total_count))
-        print("Total count within 50mm radius of centre: ", total_count)
+        #print("Total count within 50mm radius of centre: ", total_count)
