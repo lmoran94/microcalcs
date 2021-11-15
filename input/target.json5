@@ -1,0 +1,52 @@
+{
+    tree        : { Here   : {   // Adaptive-tree settings.
+    tar_tris    : 5,    // Target num triangles per leaf cell.
+    max_depth   : 8,    // Maximum tree splitting depth.
+    padding     : 0.01, // Fraction to increase leaf cells dimensions during detection.
+}
+                        },
+    grid        : { Here   : {
+    boundary: {
+        maxs: [ 5.0, 5.0, 5.0],
+        mins: [-5.0,-5.0,-5.0],
+    },
+    res: [128, 128, 128]
+}
+                        },
+    engine      : "Standard",
+    sett        : { Here    : {
+        num_phot            : 1e8,
+        block_size          : 1e5,
+        bump_dist           : 1e-9,
+        loop_limit          : 1e6,
+        min_weight          : 0.05,
+        roulette_barrels    : 8,
+    } },
+    light   : { Here    : {
+        power   : 1e6,
+        emit    : { Surface : [['objs/raman/wide_laser.obj'], { trans: [-4,0,0], rot: [0,90,0], scale:0.1 }] },
+        spec    : { Here    : {
+            Uniform :   [450.0e-9, 850.0e-9]
+        } },
+        mat     : "air"
+    } },
+    mats        : { Here    : {
+        air     : { There    : 'mats/raman/air.json5' },
+        pork     : { There    : 'mats/raman/pork.json5' },
+    } },
+    attrs       : { Here    : {
+        pork     : { Interface   : ['pork', 'air'] },
+        //imager  : { Imager      : ['transmission',  [128, 128], 1e0, [-1, 0, 0], [1, 0, 0]] },
+        imager  : { Ccd         : ['reflection',    [128, 128], 10e-3, [-8e-3, 0, 0], [1, 0, 0], [[400e-9, 800e-9], 100]] },
+    } },
+    surfs       : { Here    : {
+        target  : {
+            attr: 'pork',
+            mesh: [["objs/raman/cube.obj"], { trans: [0,0,0], rot:[0,0,0], scale:1.0 } ]
+        },
+        screen  : {
+            attr: 'imager',
+            mesh: [["objs/raman/square.obj"], { trans:[1.001, 0, 0], rot: [0, 90, 0], scale: 1 } ]
+        }
+    } },
+}

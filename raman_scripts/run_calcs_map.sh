@@ -3,6 +3,8 @@
 #python3 scripts/make_calcs_sphere.py
 touch output/Raman_weight_trs.txt
 touch output/Raman_weight_sors.txt
+rm output/ccd_sors_map/*
+rm output/ccd_trs_map/*
 #mcrt mcrt_microcalclaser.json5
 #mv output/energy_density.nc input/scale.nc
 #babbage babbage_norm.json5

@@ -1,7 +1,7 @@
 {
     grid: {
         There:
-            '10m_64_lm.json5',
+            'breast_grid.json5',
         },
     tree: {
         Here: {
@@ -27,7 +27,7 @@
                 attr: "cube",
                 mesh: [
                     ["objs/raman/small_cube.obj"], {
-                        scale: 0.061
+                        scale: 0.061, rot:[0.01,0.02,0.03]
                     }
                 ]
             }
@@ -54,13 +54,13 @@
                 air:    { There: 'mats/raman/air.json5'   },
                 //fog:    { There: 'mats/fog.json5'   },
                 //flesh:  { There: 'mats/flesh.json5' },
-                pork:   { There: 'mats/raman/pork_dummy.json5'}
+                pork:   { There: 'mats/raman/pork.json5'}
             }
     },
     light: {
         Here: {
             power       : 1.0,
-            emit        : { Surface: [['objs/raman/wide_laser.obj'], {scale: 1.0e-2, trans:[0.0,0.0,-24.999999999999999e-3]}] },
+            emit        : { Surface: [['objs/raman/wide_laser.obj'], {scale: 1.0e-2, trans:[0.0,0.0,-24.999e-3]}] },
             // emit        : { Beam: [[0.0000213,0.0000233,0.0000052353],[1,0,0]] },
             //emit        : { Points: "points.csv" },
             spec        : { Here: {Point: 8.08e-7}},
