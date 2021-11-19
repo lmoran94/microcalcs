@@ -1,0 +1,58 @@
+{   // Map of surface attributes.
+    layer_0 : {
+        attr: 'air_to_SC',
+        mesh: [["objs/skin/L0.obj"], {scale:1.0e-3}]
+    },
+    layer_1 : {
+        attr: 'SC_to_LE',
+        mesh: [["objs/skin/L1.obj"], {scale:1.0e-3}]
+    },
+    layer_2 : {
+        attr: 'LE_to_PD',
+        mesh: [["objs/skin/L2.obj"], {scale:1.0e-3}]
+    },
+    layer_3 : {
+        attr: 'PD_to_UBND',
+        mesh: [["objs/skin/L3.obj"], {scale:1.0e-3}]
+    },
+    layer_4 : {
+        attr: 'UBND_to_dermis',
+        mesh: [["objs/skin/L4.obj"], {scale:1.0e-3}]
+    },
+    layer_5 : {
+        attr: 'dermis_to_DBND',
+        mesh: [["objs/skin/L5.obj"], {scale:1.0e-3}]
+    },
+    layer_6 : {
+        attr: 'DBND_to_SF',
+        mesh: [["objs/skin/L6.obj"], {scale:1.0e-3}]
+    },
+    small_cube: {
+        attr: "cube",
+        mesh: [
+            ["objs/raman/small_cube.obj"], {
+                scale: 0.081, rot:  [0.01,0.02,0.03]
+            }
+        ]
+    },
+    square_trs: {
+        attr: "trs_detector",
+        mesh: [
+            ["objs/raman/square.obj"], {
+                trans: [0, 0, 0.0249999999],
+                rot: [0, 0, 0],
+                scale: 0.04
+            }
+        ]
+    },
+    square_sors: {
+        attr: "sors_detector",
+        mesh: [
+            ["objs/raman/square.obj"], {
+                trans: [0, 0, -0.0249999999],
+                rot: [0, 0, 0],
+                scale: 0.04
+            }
+        ]
+    }
+}

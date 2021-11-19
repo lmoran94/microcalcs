@@ -72,7 +72,7 @@ def ncdump(nc_fid, verb=True):
     return nc_attrs, nc_dims, nc_vars
 
 
-f = 'output/ccd_sors/ccd_{sors}_10.nc'
+f = 'output/ccd_{trs}.nc'
 ds = nc.Dataset(f)
 
 #vals = ds.variables['data']
